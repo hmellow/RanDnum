@@ -48,14 +48,6 @@ struct PrimaryView: View {
                     .clipShape(Circle())
                  */
                 switch currentShape {
-                case "circle":
-                    Text("Push Here")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .frame(width: 250, height: 250, alignment: .center)
-                        .background(.blue)
-                        .clipShape(Circle())
                 case "square":
                     Text("Push Here")
                         .font(.title)
@@ -64,8 +56,35 @@ struct PrimaryView: View {
                         .frame(width: 250, height: 250, alignment: .center)
                         .background(.blue)
                 case "roundedsquare":
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
                 case "capsule":
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
                 case "ellipse":
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
+                        .clipShape(Ellipse())
+                default:
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
+                        .clipShape(Circle())
                 }
             }
             Spacer()
@@ -102,3 +121,4 @@ struct MainView_Previews: PreviewProvider {
             .previewInterfaceOrientation(.portrait)
     }
 }
+
