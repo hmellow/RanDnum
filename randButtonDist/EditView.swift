@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @Binding var shapeStatus: String
+    @Binding var shapeStatus: Int
     
     var body: some View {
         Form {
