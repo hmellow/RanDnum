@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @Binding var shapeStatus: Int
+    @Binding var shapeStatus: Shape
     
     var body: some View {
         Form {
@@ -18,6 +18,6 @@ struct EditView: View {
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(shapeStatus: .constant(1))
+        EditView(shapeStatus: .constant(Shape.circle))
     }
 }

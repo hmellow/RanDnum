@@ -6,10 +6,9 @@ struct PrimaryView: View {
     @State private var isPresentingEditView = false
     @State private var currentNum = 0
     @State private var currentIcon = "equal.square.fill"
-    @State private var currentShape = 0
     @State private var randomNum = 0
-
-
+    @State private var currentShape = Shape.circle;
+    
     var body: some View {
         VStack {
             Text("The Number:")
@@ -38,13 +37,48 @@ struct PrimaryView: View {
                     currentIcon = "equal.square.fill"
                 }
             }) {
-                Text("Push Here")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .frame(width: 250, height: 250, alignment: .center)
-                    .background(.blue)
-                    .clipShape(Circle())
+
+                switch currentShape {
+                case Shape.square:
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
+                case Shape.roundedsquare:
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 50))
+                case Shape.capsule:
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 100, alignment: .center)
+                        .background(.blue)
+                        .clipShape(Capsule())
+                case Shape.ellipse:
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 125, alignment: .center)
+                        .background(.blue)
+                        .clipShape(Ellipse())
+                default:
+                    Text("Push Here")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .frame(width: 250, height: 250, alignment: .center)
+                        .background(.blue)
+                        .clipShape(Circle())
+                }
             }
             Spacer()
         }
@@ -77,5 +111,6 @@ struct PrimaryView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         PrimaryView()
+            .previewInterfaceOrientation(.portrait)
     }
 }
