@@ -7,7 +7,9 @@ struct PrimaryView: View {
     @State private var currentNum = 0
     @State private var currentIcon = "equal.square.fill"
     @State private var randomNum = 0
-    @State private var currentShape = Shape.circle;
+    
+    // Persistent userdata
+    @AppStorage("currentShape") private var currentShape = Shape.circle;
     
     var body: some View {
         VStack {
@@ -23,7 +25,7 @@ struct PrimaryView: View {
                     .foregroundColor(.black)
             }
             Spacer()
-
+            
             Button(action: {
                 randomNum = Int(arc4random_uniform(3))
                 switch randomNum {
