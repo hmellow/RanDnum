@@ -6,10 +6,10 @@ struct PrimaryView: View {
     @State private var isPresentingEditView = false
     @State private var currentNum = 0
     @State private var currentIcon = "equal.square.fill"
+    @State private var currentShape = 0
     @State private var randomNum = 0
-    @State private var currentShape = "circle";
-    
-    
+
+
     var body: some View {
         VStack {
             Text("The Number:")
@@ -24,7 +24,7 @@ struct PrimaryView: View {
                     .foregroundColor(.black)
             }
             Spacer()
-            
+
             Button(action: {
                 randomNum = Int(arc4random_uniform(3))
                 switch randomNum {
@@ -38,7 +38,6 @@ struct PrimaryView: View {
                     currentIcon = "equal.square.fill"
                 }
             }) {
-                /*
                 Text("Push Here")
                     .font(.title)
                     .fontWeight(.bold)
@@ -46,27 +45,6 @@ struct PrimaryView: View {
                     .frame(width: 250, height: 250, alignment: .center)
                     .background(.blue)
                     .clipShape(Circle())
-                 */
-                switch currentShape {
-                case "circle":
-                    Text("Push Here")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .frame(width: 250, height: 250, alignment: .center)
-                        .background(.blue)
-                        .clipShape(Circle())
-                case "square":
-                    Text("Push Here")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .frame(width: 250, height: 250, alignment: .center)
-                        .background(.blue)
-                case "roundedsquare":
-                case "capsule":
-                case "ellipse":
-                }
             }
             Spacer()
         }
@@ -99,6 +77,5 @@ struct PrimaryView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         PrimaryView()
-            .previewInterfaceOrientation(.portrait)
     }
 }
