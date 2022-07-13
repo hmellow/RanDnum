@@ -9,7 +9,6 @@ struct PrimaryView: View {
     @State private var randomNum = 0
     @State private var currentShape = Shape.circle;
     
-    
     var body: some View {
         VStack {
             Text("The Number:")
@@ -24,7 +23,7 @@ struct PrimaryView: View {
                     .foregroundColor(.black)
             }
             Spacer()
-            
+
             Button(action: {
                 randomNum = Int(arc4random_uniform(3))
                 switch randomNum {
