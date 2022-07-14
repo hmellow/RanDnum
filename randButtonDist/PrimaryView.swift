@@ -11,6 +11,7 @@ struct PrimaryView: View {
     // Persistent userdata
     @AppStorage("currentShape") private var currentShape = Shape.circle;
     
+    
     var body: some View {
         VStack {
             Text("The Number:")
@@ -82,6 +83,8 @@ struct PrimaryView: View {
                         .clipShape(Circle())
                 }
             }
+            .contentShape(Circle())
+            
             Spacer()
         }
         .toolbar {
